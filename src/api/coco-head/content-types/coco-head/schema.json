@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "coco_heads",
+  "info": {
+    "singularName": "coco-head",
+    "pluralName": "coco-heads",
+    "displayName": "coco_head"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "icons": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "icon_description": {
+      "type": "json"
+    }
+  }
+}
