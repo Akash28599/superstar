@@ -611,6 +611,8 @@ export interface ApiHomebannerHomebanner extends Struct.CollectionTypeSchema {
     nav_icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
+    topheading: Schema.Attribute.String;
+    uid: Schema.Attribute.UID;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
