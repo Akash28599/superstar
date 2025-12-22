@@ -677,6 +677,51 @@ export interface ApiOurproductOurproduct extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiScholarshipFirstScholarshipFirst
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'scholarship_firsts';
+  info: {
+    displayName: 'Scholarship_first';
+    pluralName: 'scholarship-firsts';
+    singularName: 'scholarship-first';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    background_left: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    coco_hanging: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    criteria: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    enableform: Schema.Attribute.Boolean;
+    group_kellogs: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    kellogscholarship: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::scholarship-first.scholarship-first'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    steps_description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSitesettingSitesetting extends Struct.CollectionTypeSchema {
   collectionName: 'sitesettings';
   info: {
@@ -1262,6 +1307,7 @@ declare module '@strapi/strapi' {
       'api::homebanner.homebanner': ApiHomebannerHomebanner;
       'api::navbar.navbar': ApiNavbarNavbar;
       'api::ourproduct.ourproduct': ApiOurproductOurproduct;
+      'api::scholarship-first.scholarship-first': ApiScholarshipFirstScholarshipFirst;
       'api::sitesetting.sitesetting': ApiSitesettingSitesetting;
       'api::story.story': ApiStoryStory;
       'plugin::content-releases.release': PluginContentReleasesRelease;

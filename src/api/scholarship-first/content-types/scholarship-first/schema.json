@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "scholarship_firsts",
+  "info": {
+    "singularName": "scholarship-first",
+    "pluralName": "scholarship-firsts",
+    "displayName": "Scholarship_first"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "background_left": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "group_kellogs": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "steps_description": {
+      "type": "text"
+    },
+    "criteria": {
+      "type": "string"
+    },
+    "kellogscholarship": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "coco_hanging": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "enableform": {
+      "type": "boolean"
+    }
+  }
+}
