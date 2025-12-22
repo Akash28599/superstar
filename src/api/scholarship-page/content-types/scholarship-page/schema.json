@@ -1,0 +1,57 @@
+{
+  "kind": "singleType",
+  "collectionName": "scholarship_pages",
+  "info": {
+    "singularName": "scholarship-page",
+    "pluralName": "scholarship-pages",
+    "displayName": "Scholarship Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "IconImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "groupKellogs": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "competitionTitle": {
+      "type": "string"
+    },
+    "CompetitionDescription": {
+      "type": "text"
+    },
+    "steps": {
+      "type": "json"
+    },
+    "criterias": {
+      "type": "json"
+    },
+    "groupKellogs2": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

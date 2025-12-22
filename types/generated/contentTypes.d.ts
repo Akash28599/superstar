@@ -722,6 +722,78 @@ export interface ApiScholarshipFirstScholarshipFirst
   };
 }
 
+export interface ApiScholarshipFormScholarshipForm
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'scholarship_forms';
+  info: {
+    displayName: 'Scholarship Form';
+    pluralName: 'scholarship-forms';
+    singularName: 'scholarship-form';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    inputType: Schema.Attribute.Enumeration<
+      ['text', 'dropdown', 'textArea', 'button', 'fileUpload']
+    >;
+    label: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::scholarship-form.scholarship-form'
+    > &
+      Schema.Attribute.Private;
+    placeHolder: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiScholarshipPageScholarshipPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'scholarship_pages';
+  info: {
+    displayName: 'Scholarship Page';
+    pluralName: 'scholarship-pages';
+    singularName: 'scholarship-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    CompetitionDescription: Schema.Attribute.Text;
+    competitionTitle: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    criterias: Schema.Attribute.JSON;
+    groupKellogs: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    groupKellogs2: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    IconImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::scholarship-page.scholarship-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    steps: Schema.Attribute.JSON;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSitesettingSitesetting extends Struct.CollectionTypeSchema {
   collectionName: 'sitesettings';
   info: {
@@ -1308,6 +1380,8 @@ declare module '@strapi/strapi' {
       'api::navbar.navbar': ApiNavbarNavbar;
       'api::ourproduct.ourproduct': ApiOurproductOurproduct;
       'api::scholarship-first.scholarship-first': ApiScholarshipFirstScholarshipFirst;
+      'api::scholarship-form.scholarship-form': ApiScholarshipFormScholarshipForm;
+      'api::scholarship-page.scholarship-page': ApiScholarshipPageScholarshipPage;
       'api::sitesetting.sitesetting': ApiSitesettingSitesetting;
       'api::story.story': ApiStoryStory;
       'plugin::content-releases.release': PluginContentReleasesRelease;
