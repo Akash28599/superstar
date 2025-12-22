@@ -532,6 +532,7 @@ export interface ApiFooterFooter extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    Contact: Schema.Attribute.BigInteger;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

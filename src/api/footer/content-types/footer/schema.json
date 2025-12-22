@@ -36,6 +36,9 @@
     },
     "Other_details": {
       "type": "text"
+    },
+    "Contact": {
+      "type": "biginteger"
     }
   }
 }
