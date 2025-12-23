@@ -779,6 +779,9 @@ export interface ApiScholarshipPageScholarshipPage
     groupKellogs2: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
+    hangingMonkey: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     IconImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -787,6 +790,7 @@ export interface ApiScholarshipPageScholarshipPage
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    shouldShowForm: Schema.Attribute.Boolean;
     steps: Schema.Attribute.JSON;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -855,6 +859,75 @@ export interface ApiStoryStory extends Struct.CollectionTypeSchema {
     story_description: Schema.Attribute.Text;
     story_title: Schema.Attribute.String;
     thumbnail: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiThankYouPageThankYouPage extends Struct.SingleTypeSchema {
+  collectionName: 'thank_you_pages';
+  info: {
+    displayName: 'Thank You Page';
+    pluralName: 'thank-you-pages';
+    singularName: 'thank-you-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    cocoMonkey: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    cocoPopsImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    leftKelloggImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::thank-you-page.thank-you-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiYoutubeUrlYoutubeUrl extends Struct.SingleTypeSchema {
+  collectionName: 'youtube_urls';
+  info: {
+    displayName: 'Youtube URL';
+    pluralName: 'youtube-urls';
+    singularName: 'youtube-url';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    editionName: Schema.Attribute.String;
+    editionWinnersLink: Schema.Attribute.JSON;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::youtube-url.youtube-url'
+    > &
+      Schema.Attribute.Private;
+    mainVideoLink: Schema.Attribute.String;
+    newSnippetsLinks: Schema.Attribute.JSON;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1384,6 +1457,8 @@ declare module '@strapi/strapi' {
       'api::scholarship-page.scholarship-page': ApiScholarshipPageScholarshipPage;
       'api::sitesetting.sitesetting': ApiSitesettingSitesetting;
       'api::story.story': ApiStoryStory;
+      'api::thank-you-page.thank-you-page': ApiThankYouPageThankYouPage;
+      'api::youtube-url.youtube-url': ApiYoutubeUrlYoutubeUrl;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

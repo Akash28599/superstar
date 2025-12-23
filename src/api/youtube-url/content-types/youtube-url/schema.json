@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "youtube_urls",
+  "info": {
+    "singularName": "youtube-url",
+    "pluralName": "youtube-urls",
+    "displayName": "Youtube URL"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "mainVideoLink": {
+      "type": "string"
+    },
+    "newSnippetsLinks": {
+      "type": "json"
+    },
+    "editionWinnersLink": {
+      "type": "json"
+    },
+    "editionName": {
+      "type": "string"
+    }
+  }
+}
