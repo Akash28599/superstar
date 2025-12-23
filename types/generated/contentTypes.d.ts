@@ -747,6 +747,7 @@ export interface ApiScholarshipFormScholarshipForm
       'api::scholarship-form.scholarship-form'
     > &
       Schema.Attribute.Private;
+    order: Schema.Attribute.Integer;
     placeHolder: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;

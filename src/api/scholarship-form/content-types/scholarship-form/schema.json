@@ -26,6 +26,9 @@
     },
     "placeHolder": {
       "type": "string"
+    },
+    "order": {
+      "type": "integer"
     }
   }
 }
