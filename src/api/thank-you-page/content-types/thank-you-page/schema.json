@@ -46,6 +46,16 @@
         "videos",
         "audios"
       ]
+    },
+    "cocoPopBlur": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }

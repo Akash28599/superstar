@@ -880,6 +880,9 @@ export interface ApiThankYouPageThankYouPage extends Struct.SingleTypeSchema {
     cocoMonkey: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
+    cocoPopBlur: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     cocoPopsImage: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
